@@ -64,9 +64,3 @@ One page is plenty. Bullets are fine. We read this closely — it's the closest 
 ## On AI Tools
 
 Use whatever you'd use on the job, including AI since that's how we work. But note the live session above: anything you ship, you own and will be editing in front of us. Fair warning on this domain specifically. Models are confident and fluent about tax rules and frequently wrong in ways that read fine. The failure mode is a clean implementation of a rule that doesn't exist. Verify things.
-
-## Housekeeping
-
-You own what you build. We're licensing it for evaluation only and won't use it in our product.
-
-Please don't publish the brief or the dataset. It isn't fair to the people going through this after you.
