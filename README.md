@@ -36,7 +36,7 @@ That has two edges. The first is correctness: the calculations here are governed
 
 The second is what the firm is allowed to do. Accountants operate under real constraints on how they advise clients, what they do with client information, and what has to happen before something goes out the door. We're not going to enumerate those constraints for you. Finding them, judging which ones bear on this product, and designing around them is a substantial part of what we're looking at — and it's the part most engineers building for this industry get wrong.
 
-Assume tax year **2025** throughout.
+Assume we are currently in tax year **2025** throughout.
 
 ## Scope
 
