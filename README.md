@@ -20,7 +20,7 @@ This project is a small version of that.
 
 ## The Problem
 
-> Our firms get calls in April from clients who owe a penalty nobody warned them about. The firm usually could have seen it coming months earlier — the information was sitting in last year's return the whole time. But nobody's going to check 400 clients by hand in September. Build us something that surfaces this across a firm's whole book and helps them actually do something about it.
+> Our firms get calls in April (before the filing deadline) from clients who owe a penalty nobody warned them about. The firm usually could have seen it coming months earlier — the information was sitting in last year's return the whole time. But nobody's going to check 400 clients by hand in September. Build us something that surfaces this across a firm's whole book and helps them actually do something about it.
 
 That's the ask as we'd give it to you internally. Figuring out what it means is the project.
 
@@ -28,7 +28,7 @@ Some texture on how this plays out in a firm. The people who get hurt here are r
 
 There's also a question of what the firm does with the answer. Identifying a problem the firm can't act on isn't worth much. And whatever leaves the firm's hands and reaches a client is something the firm is professionally responsible for.
 
-In `/data` you'll find client records for a fictional CPA firm — prior-year return summaries and current-year activity to date. The records are deliberately heterogeneous, and the variation is part of the specification. Read the data before you write code; some of the requirements are in there rather than here.
+In `/data` you'll find client records for a fictional CPA firm — prior-year (2024) return summaries and current-year (2025) activity to date. The records are deliberately heterogeneous, and the variation is part of the specification. Read the data before you write code; some of the requirements are in there rather than here.
 
 **The bar is that a CPA could put the output of this in front of a real client.**
 
@@ -36,7 +36,7 @@ That has two edges. The first is correctness: the calculations here are governed
 
 The second is what the firm is allowed to do. Accountants operate under real constraints on how they advise clients, what they do with client information, and what has to happen before something goes out the door. We're not going to enumerate those constraints for you. Finding them, judging which ones bear on this product, and designing around them is a substantial part of what we're looking at — and it's the part most engineers building for this industry get wrong.
 
-Assume we are currently in tax year **2025** throughout.
+Assume we are currently in tax year **2025** (as the sample data is structured) and we are looking back on the prior **2024** tax year.
 
 ## Scope
 
