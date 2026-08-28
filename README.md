@@ -20,23 +20,13 @@ This project is a small version of that.
 
 ## The Problem
 
-> Our firms get calls in April (before the filing deadline) from clients who owe a penalty nobody warned them about. The firm usually could have seen it coming months earlier — the information was sitting in last year's return the whole time. But nobody's going to check 400 clients by hand in September. Build us something that surfaces this across a firm's whole book and helps them actually do something about it.
+> Firms get calls in April (before the filing deadline) from clients who owe an underpayment penalty nobody warned them about and are frustrated. The firms usually could have seen it coming months earlier in the prior year since they have those prior year returns. But nobody's going to check hundreds of clients by hand before the end of the tax year to help clients avoid penalties. Build us something that surfaces clients who are at risk of penalties for the current tax year (2025), across a firm's whole book.
 
-That's the ask as we'd give it to you internally. Figuring out what it means is the project.
+Some texture on how this plays out in a firm. The people who get hurt and pay penalties here are rarely the straightforward W-2 clients — they're the ones whose year didn't look like last year. The consultant who left a salaried job in March. The client who sold a rental property. The one whose spouse started a business. The firm's exposure isn't uniform either: some of these clients are a phone call and a fixed problem, some are a phone call and an apology, and telling those apart before the tax year ends is worth a great deal more than telling them apart in April.
 
-Some texture on how this plays out in a firm. The people who get hurt here are rarely the straightforward W-2 clients — they're the ones whose year didn't look like last year. The consultant who left a salaried job in March. The client who sold a rental property. The one whose spouse started a business. The firm's exposure isn't uniform either: some of these clients are a phone call and a fixed problem, some are a phone call and an apology, and telling those apart in September is worth a great deal more than telling them apart in April.
+Assume we are currently in tax year **2025** (i.e. today is September 2025) and we are looking back on the prior **2024** tax year (for which returns were filed). In `/data` you'll find client records for a fictional CPA firm — prior-year (2024) return summaries and current-year (2025) activity (payments, withholdings, etc) to date. The records are deliberately heterogeneous.
 
-There's also a question of what the firm does with the answer. Identifying a problem the firm can't act on isn't worth much. And whatever leaves the firm's hands and reaches a client is something the firm is professionally responsible for.
-
-In `/data` you'll find client records for a fictional CPA firm — prior-year (2024) return summaries and current-year (2025) activity to date. The records are deliberately heterogeneous, and the variation is part of the specification. Read the data before you write code; some of the requirements are in there rather than here.
-
-**The bar is that a CPA could put the output of this in front of a real client.**
-
-That has two edges. The first is correctness: the calculations here are governed by specific rules, and those rules have exceptions, thresholds, and timing quirks that determine the answer for exactly the clients this product exists to catch. Getting the typical client right is not difficult and is not what we're evaluating. The awkward ones are the entire point, and a tool that's confidently wrong about them is worse than no tool at all.
-
-The second is what the firm is allowed to do. Accountants operate under real constraints on how they advise clients, what they do with client information, and what has to happen before something goes out the door. We're not going to enumerate those constraints for you. Finding them, judging which ones bear on this product, and designing around them is a substantial part of what we're looking at — and it's the part most engineers building for this industry get wrong.
-
-Assume we are currently in tax year **2025** (as the sample data is structured) and we are looking back on the prior **2024** tax year.
+Build a dashboard showing a list of clients and information about potential under/over payments that could result in penalties for tax year 2025. Since we are assuming that we're in 2025, with this dashboard, firms can contact clients who are on track to owe a penalty and inform them — before the year is over. With this, clients can make additional tax payments to avoid penalties when ultimately filing their 2025 return. 
 
 ## Scope
 
@@ -44,23 +34,12 @@ You generally shouldn't spend significant time on: auth, multi-tenancy, deployme
 
 You may use any stack you like.
 
-Where this project brief is ambiguous, make a decision and document the assumption. We'd rather see a decisive interpretation you can defend than a hedge that covers everything shallowly. Scoping is a big part of this job. A clearly reasoned omission is better than a shaky implementation.
+Where this project brief is ambiguous, feel free to ask questions or make a decision and document the assumption. We'd rather see a decisive interpretation you can defend than a hedge that covers everything shallowly. Scoping is a big part of this job. A clearly reasoned omission is better than a shaky implementation.
 
 ## What To Submit
 
-Assign @seanmcoleman read access to a new GitHub repository containing all code with whatever instructions we need to start it. Assume we have a normal dev environment and nothing else. 
-
-A link to a live, hosted demo environment that we can share with our CPA team to test.
-
-**A short write-up** — drop it in a new file and answer these:
-
-- What did you build?
-- What did you deliberately leave out, and why?
-- What would you have asked us, if you could have?
-- What are you unsure about?
-
-One page is plenty. Bullets are fine. We read this closely — it's the closest thing in this process to how you'd actually communicate with us day to day.
+Assign @seanmcoleman read access to a new GitHub repository containing all code with whatever instructions we need to start it. Assume we have a normal dev environment and nothing else.
 
 ## On AI Tools
 
-Use whatever you'd use on the job, including AI since that's how we work. But note the live session above: anything you ship, you own and will be editing in front of us. Fair warning on this domain specifically. Models are confident and fluent about tax rules and frequently wrong in ways that read fine. The failure mode is a clean implementation of a rule that doesn't exist. Verify things.
+Use whatever you'd use on the job, including AI since that's how we work.
